@@ -1,11 +1,17 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-const ChooseBreed = () => {
+const ChooseBreed = ({breed}) => {
+  console.log(breed)
   return (
     <div>
-      choose breed!!!!
+      <h2>{breed}</h2>
     </div>
   )
 }
 
-export default ChooseBreed
+const mapStateToProps = (state) => ({
+  breed: state.breed
+})
+
+export default connect(mapStateToProps)(ChooseBreed)
