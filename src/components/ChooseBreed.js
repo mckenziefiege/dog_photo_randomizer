@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {loadBreeds} from '../store/actions'
+import {loadBreeds} from '../redux/actions'
 
 class ChooseBreed extends Component {
 
@@ -9,10 +9,13 @@ class ChooseBreed extends Component {
     }
 
     render() {
-      console.log(this.props)
+
+      let breedList = this.props.breeds.map(breed => <div key={breed} onClick={(e) => this.props.changeSelectedBreed(e.target.innerText)}> {breed} </div>)
       return (
       <div>
-        <h2>{this.props.selectedBreed}</h2>
+        <h2>Selected Breed: {this.props.selectedBreed}</h2>
+        <p>Breeds:</p>
+        {breedList}
       </div>
     )
   }
@@ -24,7 +27,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  loadBreeds: () => dispatch(loadBreeds())
+  loadBreeds: () => dispatch(loadBreeds()),
+  changeSelectedBreed: (breed) => dispatch({type: 'CHANGE_SELECTED_BREED', payload: breed})
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChooseBreed)

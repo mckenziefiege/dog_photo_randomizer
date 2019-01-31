@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {fetchImage} from '../redux/actions'
 
-const RandomBreed = () => {
-  return (
-    <div>
-      The random photo
-    </div>
-  )
+class RandomBreed extends Component {
+
+  render() {
+    console.log(this.props)
+    return (
+      <div>
+      <button onClick={this.props.fetchImage}>RANDOM DOG</button>
+      <img src={this.props.image}/>
+      </div>
+    )
+  }
 }
 
-export default RandomBreed
+const mapStateToProps = (state) => ({
+  image: state.image
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchImage: () => dispatch(fetchImage())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(RandomBreed)

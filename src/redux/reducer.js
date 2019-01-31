@@ -1,6 +1,6 @@
 const initialState = {
     breeds: [],
-    selectedBreed: "Pembroke",
+    selectedBreed: "pembroke",
     image: ""
 }
 
@@ -10,6 +10,8 @@ const reducer = (state = initialState, action) => {
       return {...state, selectedBreed: action.payload}
     case "UPDATE_BREED_LIST":
       return {...state, breeds: action.payload}
+    case "UPDATE_IMAGE":
+      return {...state, image: action.payload}
     default:
       return state
   }
