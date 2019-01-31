@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div>
-      Dog Photo Randomizer
+      <h1>Dog photo randomizer</h1>
     </div>
   )
 }
