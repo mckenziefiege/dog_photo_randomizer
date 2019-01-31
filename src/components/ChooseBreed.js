@@ -8,14 +8,24 @@ class ChooseBreed extends Component {
       this.props.loadBreeds()
     }
 
+  onFormSubmit = (e) => {
+    e.preventDefault()
+    this.props.changeSelectedBreed(e.target.breedChosen.value)
+  }
+
     render() {
 
-      let breedList = this.props.breeds.map(breed => <div key={breed} onClick={(e) => this.props.changeSelectedBreed(e.target.innerText)}> {breed} </div>)
+      let breedList = this.props.breeds.map(breed => <option name="breedChosen" key={breed} value={breed}> {breed} </option>)
       return (
       <div>
         <h2>Selected Breed: {this.props.selectedBreed}</h2>
         <p>Breeds:</p>
-        {breedList}
+        <form onSubmit={(e) => this.onFormSubmit(e)}>
+          <select name="breedChosen" >
+          {breedList}
+          </select>
+          <input type="submit" />
+        </form>
       </div>
     )
   }
