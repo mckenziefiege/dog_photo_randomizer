@@ -5,9 +5,10 @@ export const UPDATE_BREED_LIST = "UPDATE_BREED_LIST"
 export const UPDATE_IMAGE = "UPDATE_IMAGE"
 
 export const changeBreed = (breed) => ({
-  type: CHANGE_BREED,
-  payload: breed
+    type: CHANGE_BREED,
+    payload: breed
 })
+
 
 export const updateBreedList = (breeds) => ({
   type: UPDATE_BREED_LIST,
