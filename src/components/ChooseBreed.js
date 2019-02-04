@@ -14,17 +14,16 @@ class ChooseBreed extends Component {
   }
 
     render() {
-
       let breedList = this.props.breeds.map(breed => <option name="breedChosen" key={breed} value={breed}> {breed} </option>)
       return (
       <div>
-        <h2>Selected Breed: {this.props.selectedBreed}</h2>
-        <p>Breeds:</p>
+        <h2 className="header-secondary">Selected Breed: {this.props.selectedBreed}</h2>
+        <p className="options-header">Breeds</p>
         <form onSubmit={(e) => this.onFormSubmit(e)}>
           <select name="breedChosen" >
           {breedList}
           </select>
-          <input type="submit" />
+          <input className="button" type="submit" />
         </form>
       </div>
     )

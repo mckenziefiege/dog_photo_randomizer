@@ -8,8 +8,8 @@ class RandomBreed extends Component {
     console.log(this.props)
     return (
       <div>
-      <button onClick={this.props.fetchImage}>RANDOM DOG</button>
-      <img src={this.props.image}/>
+        <button className="button" onClick={this.props.fetchImage}>RANDOM DOG</button>
+        <img className="image-main" src={this.props.image}/>
       </div>
     )
   }
