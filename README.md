@@ -1,6 +1,6 @@
 # Dog Photo Randomizer
 
-
+<img width="1233" alt="screen shot 2019-02-04 at 5 20 37 pm" src="https://user-images.githubusercontent.com/38592156/52241451-b7341400-28a1-11e9-8924-311c2ab824a1.png">
 
 ## Available Scripts
 
